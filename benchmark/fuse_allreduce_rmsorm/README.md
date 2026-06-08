@@ -1,8 +1,8 @@
 # Fused AllReduce + RMSNorm Benchmark
 
-This directory reproduces the AllReduce + Residual + RMSNorm latency.
+Benchmark fused AllReduce + residual add + RMSNorm kernels on a single multi-GPU node.
 
-## Figure Mapping
+## Overview
 
 - Operator: `RMSNorm(AllReduce(x) + residual, weight)`
 - Hardware expectation: single 8-GPU SM90/H20 node with NVLink/NVSwitch
@@ -23,7 +23,7 @@ Passing any other `--hidden` value is rejected by the benchmark before workers
 are launched, so users see the supported shape list directly instead of a lower
 level kernel error.
 
-## Recommended Reproduction Command
+## Usage
 
 Run from the repository root:
 
